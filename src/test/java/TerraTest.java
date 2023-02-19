@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import java.util.List;
 
 public class TerraTest {
@@ -17,13 +16,22 @@ public class TerraTest {
         driver.manage().window().maximize();
         driver.get(TerraPage.URL);
     }
+
     @Test
-    public void choosePizza(){
+    public void choosePizza() {
+        WebElement cookiesButton = driver.findElement(By.xpath("//button[@class='close-icon']"));
+        cookiesButton.click();
         List<WebElement> pizzaBtn = driver.findElements(By.xpath(TerraPage.BTN_PIZZA));
-        pizzaBtn.get(1).click();
+        for (WebElement element : pizzaBtn) {
+            if (!element.getText().equals("")) {
+                element.click();
+                break;
+            }
+        }
     }
-    @After
-    public void closeBrowser(){
-    driver.quit();
-    }
+
+        @After
+        public void closeBrowser () {
+            driver.quit();
+        }
 }
