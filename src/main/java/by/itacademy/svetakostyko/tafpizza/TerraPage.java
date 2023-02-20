@@ -9,6 +9,7 @@ public class TerraPage {
     public static final String SIZE_OF_PIZZA = "//span[@class='size-product']";
     public static final String TITLE_OF_PIZZA = "//div[@class='basket__products-item-name']";
     public static final String BTN_BAR = "//a[@href='catalog/bar']";
+    public static final String BTN_YELLOW_SMOOTHIES = "//button[@ data-id='522']";
 
 
 }
